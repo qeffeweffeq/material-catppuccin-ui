@@ -20,7 +20,7 @@ export function Sidebar({ darkMode, setDarkMode, title = "Material", subtitle = 
         </p>
       </div>
       
-      <div className="px-8 mt-6 flex-1 overflow-y-auto">
+      <div className="px-8 mt-6 flex-1 overflow-y-auto flex flex-col pb-8">
         {children}
       </div>
 
