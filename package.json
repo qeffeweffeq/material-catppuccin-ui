@@ -1,0 +1,21 @@
+{
+  "name": "@qfwfq/material-catppuccin-ui",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qeffeweffeq/material-catppuccin-ui.git"
+  },
+  "files": [
+    "src",
+    "styles",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "tailwindcss": "^4"
+  }
+}
