@@ -12,10 +12,10 @@ export function Sidebar({ darkMode, setDarkMode, title = "Material", subtitle = 
   return (
     <aside className={`fixed inset-y-0 left-0 z-20 w-80 h-screen border-r flex flex-col ${darkMode ? 'border-[#313244] bg-[#181825]' : 'border-[#ccd0da] bg-[#e6e9ef]'}`}>
       <div className="p-8 pb-6">
-        <h1 className={`text-3xl font-bold tracking-tight ${darkMode ? 'text-[#cdd6f4]' : 'text-[#4c4f69]'}`}>
+        <h1 className={`text-2xl font-bold tracking-tight ${darkMode ? 'text-[#cdd6f4]' : 'text-[#4c4f69]'}`}>
           {title}
         </h1>
-        <p className={`text-xs mt-1 uppercase tracking-widest font-semibold ${darkMode ? 'text-[#a6adc8]' : 'text-[#6c6f85]'}`}>
+        <p className={`text-xs font-medium uppercase tracking-wider ${darkMode ? 'text-[#a6adc8]' : 'text-[#6c6f85]'}`}>
           {subtitle}
         </p>
       </div>
