@@ -24,9 +24,11 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 ```
 
-Import the global styles in your root `layout.tsx` or `globals.css`:
+Import the global styles and instruct Tailwind to scan the package for utility classes in your root `globals.css`:
 ```css
+@import "tailwindcss";
 @import "@qfwfq/material-catppuccin-ui/styles/globals.css";
+@source "../../node_modules/@qfwfq/material-catppuccin-ui";
 ```
 
 ## Usage Example
