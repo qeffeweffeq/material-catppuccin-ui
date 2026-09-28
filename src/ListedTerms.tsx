@@ -18,7 +18,7 @@ export function ListedTerms({ darkMode, terms, colors, onChange, onAdd, onRemove
         <div key={idx} className={`flex items-center rounded border transition-colors ${
           darkMode ? 'border-[#313244] bg-[#1e1e2e]' : 'border-[#ccd0da] bg-white'
         }`}>
-          <div className={`w-3 h-3 rounded-full ml-3 ${darkMode ? 'opacity-80' : ''}`} style={{ backgroundColor: colors[idx % colors.length] }}></div>
+          <div className={`w-3 h-3 shrink-0 rounded-full ml-3 ${darkMode ? 'opacity-80' : ''}`} style={{ backgroundColor: colors[idx % colors.length] }}></div>
           <input 
             type="text" 
             value={term} 
