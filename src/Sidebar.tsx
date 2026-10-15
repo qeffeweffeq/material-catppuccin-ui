@@ -20,8 +20,10 @@ export function Sidebar({ darkMode, setDarkMode, title = "Material", subtitle = 
         </p>
       </div>
       
-      <div className="px-8 pt-4 mt-0 flex-1 overflow-y-auto flex flex-col pb-8">
+      <div className="px-8 pt-4 mt-0 flex-1 overflow-y-auto flex flex-col">
         {children}
+        {/* Spacer to fix WebKit flex overflow padding bug */}
+        <div className="shrink-0 h-8 w-full"></div>
       </div>
 
     </aside>
