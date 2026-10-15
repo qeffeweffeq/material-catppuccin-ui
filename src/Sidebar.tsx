@@ -10,12 +10,12 @@ export interface SidebarProps {
 
 export function Sidebar({ darkMode, setDarkMode, title = "Material", subtitle = "Dashboard", children }: SidebarProps) {
   return (
-    <aside className={`fixed inset-y-0 left-0 z-20 w-80 h-screen border-r flex flex-col ${darkMode ? 'border-[#313244] bg-[#181825]' : 'border-[#ccd0da] bg-[#e6e9ef]'}`}>
+    <aside className={`fixed inset-y-0 left-0 z-20 w-80 h-screen border-r flex flex-col ${darkMode ? 'border-cat-surface0 bg-cat-crust' : 'border-cat-surface0 bg-cat-mantle'}`}>
       <div className="pt-6 px-8 pb-0">
-        <h1 className={`text-2xl font-bold tracking-tight ${darkMode ? 'text-[#cdd6f4]' : 'text-[#4c4f69]'}`}>
+        <h1 className="text-2xl font-bold tracking-tight text-cat-text">
           {title}
         </h1>
-        <p className={`text-xs font-medium uppercase tracking-wider ${darkMode ? 'text-[#a6adc8]' : 'text-[#6c6f85]'}`}>
+        <p className="text-xs font-medium uppercase tracking-wider text-cat-subtext0">
           {subtitle}
         </p>
       </div>

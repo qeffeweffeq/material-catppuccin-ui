@@ -1,23 +1,303 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Default Theme: Esab (Light) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cat-rosewater: #FF338F;
+  --cat-flamingo: #E64A77;
+  --cat-pink: #FF0074;
+  --cat-mauve: #8C37AC;
+  --cat-red: #E0005A;
+  --cat-maroon: #C4004E;
+  --cat-peach: #FF5500;
+  --cat-yellow: #E69900;
+  --cat-green: #00A855;
+  --cat-teal: #009E91;
+  --cat-sky: #0092B0;
+  --cat-sapphire: #005F92;
+  --cat-blue: #1A5EBA;
+  --cat-lavender: #5A62E8;
+  --cat-text: #000000;
+  --cat-subtext1: #313131;
+  --cat-subtext0: #595959;
+  --cat-overlay2: #717171;
+  --cat-overlay1: #898989;
+  --cat-overlay0: #9f9f9f;
+  --cat-surface2: #c2c2c2;
+  --cat-surface1: #d8d8d8;
+  --cat-surface0: #dedede;
+  --cat-base: #f1f1f1;
+  --cat-mantle: #f8f8f8;
+  --cat-crust: #ffffff;
+  --background: var(--cat-base);
+  --foreground: var(--cat-text);
+}
+
+/* System Dark Mode: Base (Dark) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cat-rosewater: #FF338F;
+    --cat-flamingo: #FF5C8A;
+    --cat-pink: #FF0074;
+    --cat-mauve: #A64AC9;
+    --cat-red: #E0005A;
+    --cat-maroon: #C4004E;
+    --cat-peach: #FF5500;
+    --cat-yellow: #FFAA00;
+    --cat-green: #00D26A;
+    --cat-teal: #00C4B4;
+    --cat-sky: #00B4D8;
+    --cat-sapphire: #0077B6;
+    --cat-blue: #2A75D3;
+    --cat-lavender: #7C83FD;
+    --cat-text: #ffffff;
+    --cat-subtext1: #cecece;
+    --cat-subtext0: #a6a6a6;
+    --cat-overlay2: #8e8e8e;
+    --cat-overlay1: #767676;
+    --cat-overlay0: #606060;
+    --cat-surface2: #3d3d3d;
+    --cat-surface1: #272727;
+    --cat-surface0: #212121;
+    --cat-base: #0e0e0e;
+    --cat-mantle: #070707;
+    --cat-crust: #000000;
+    --background: var(--cat-base);
+    --foreground: var(--cat-text);
+  }
+}
+
+/* Specific Theme: Base (Dark) */
+:root[data-theme="base"],
+.dark,
+.theme-base {
+  --cat-rosewater: #FF338F;
+  --cat-flamingo: #FF5C8A;
+  --cat-pink: #FF0074;
+  --cat-mauve: #A64AC9;
+  --cat-red: #E0005A;
+  --cat-maroon: #C4004E;
+  --cat-peach: #FF5500;
+  --cat-yellow: #FFAA00;
+  --cat-green: #00D26A;
+  --cat-teal: #00C4B4;
+  --cat-sky: #00B4D8;
+  --cat-sapphire: #0077B6;
+  --cat-blue: #2A75D3;
+  --cat-lavender: #7C83FD;
+  --cat-text: #ffffff;
+  --cat-subtext1: #cecece;
+  --cat-subtext0: #a6a6a6;
+  --cat-overlay2: #8e8e8e;
+  --cat-overlay1: #767676;
+  --cat-overlay0: #606060;
+  --cat-surface2: #3d3d3d;
+  --cat-surface1: #272727;
+  --cat-surface0: #212121;
+  --cat-base: #0e0e0e;
+  --cat-mantle: #070707;
+  --cat-crust: #000000;
+  --background: var(--cat-base);
+  --foreground: var(--cat-text);
+}
+
+/* Specific Theme: Esab (Light) */
+:root[data-theme="esab"],
+.light,
+.theme-esab {
+  --cat-rosewater: #FF338F;
+  --cat-flamingo: #E64A77;
+  --cat-pink: #FF0074;
+  --cat-mauve: #8C37AC;
+  --cat-red: #E0005A;
+  --cat-maroon: #C4004E;
+  --cat-peach: #FF5500;
+  --cat-yellow: #E69900;
+  --cat-green: #00A855;
+  --cat-teal: #009E91;
+  --cat-sky: #0092B0;
+  --cat-sapphire: #005F92;
+  --cat-blue: #1A5EBA;
+  --cat-lavender: #5A62E8;
+  --cat-text: #000000;
+  --cat-subtext1: #313131;
+  --cat-subtext0: #595959;
+  --cat-overlay2: #717171;
+  --cat-overlay1: #898989;
+  --cat-overlay0: #9f9f9f;
+  --cat-surface2: #c2c2c2;
+  --cat-surface1: #d8d8d8;
+  --cat-surface0: #dedede;
+  --cat-base: #f1f1f1;
+  --cat-mantle: #f8f8f8;
+  --cat-crust: #ffffff;
+  --background: var(--cat-base);
+  --foreground: var(--cat-text);
+}
+
+/* Specific Theme: Mocha (Official Dark) */
+:root[data-theme="mocha"],
+.theme-mocha {
+  --cat-rosewater: #f5e0dc;
+  --cat-flamingo: #f2cdcd;
+  --cat-pink: #f5c2e7;
+  --cat-mauve: #cba6f7;
+  --cat-red: #f38ba8;
+  --cat-maroon: #eba0ac;
+  --cat-peach: #fab387;
+  --cat-yellow: #f9e2af;
+  --cat-green: #a6e3a1;
+  --cat-teal: #94e2d5;
+  --cat-sky: #89dceb;
+  --cat-sapphire: #74c7ec;
+  --cat-blue: #89b4fa;
+  --cat-lavender: #b4befe;
+  --cat-text: #cdd6f4;
+  --cat-subtext1: #bac2de;
+  --cat-subtext0: #a6adc8;
+  --cat-overlay2: #9399b2;
+  --cat-overlay1: #7f849c;
+  --cat-overlay0: #6c7086;
+  --cat-surface2: #585b70;
+  --cat-surface1: #45475a;
+  --cat-surface0: #313244;
+  --cat-base: #1e1e2e;
+  --cat-mantle: #181825;
+  --cat-crust: #11111b;
+  --background: var(--cat-base);
+  --foreground: var(--cat-text);
+}
+
+/* Specific Theme: Latte (Official Light) */
+:root[data-theme="latte"],
+.theme-latte {
+  --cat-rosewater: #dc8a78;
+  --cat-flamingo: #dd7878;
+  --cat-pink: #ea76cb;
+  --cat-mauve: #8839ef;
+  --cat-red: #d20f39;
+  --cat-maroon: #e64553;
+  --cat-peach: #fe640b;
+  --cat-yellow: #df8e1d;
+  --cat-green: #40a02b;
+  --cat-teal: #179299;
+  --cat-sky: #04a5e5;
+  --cat-sapphire: #209fb5;
+  --cat-blue: #1e66f5;
+  --cat-lavender: #7287fd;
+  --cat-text: #4c4f69;
+  --cat-subtext1: #5c5f77;
+  --cat-subtext0: #6c6f85;
+  --cat-overlay2: #7c7f93;
+  --cat-overlay1: #8c8fa1;
+  --cat-overlay0: #9ca0b0;
+  --cat-surface2: #acb0be;
+  --cat-surface1: #bcc0cc;
+  --cat-surface0: #ccd0da;
+  --cat-base: #eff1f5;
+  --cat-mantle: #e6e9ef;
+  --cat-crust: #dce0e8;
+  --background: var(--cat-base);
+  --foreground: var(--cat-text);
+}
+
+/* Specific Theme: Frappé (Official Dark) */
+:root[data-theme="frappe"],
+.theme-frappe {
+  --cat-rosewater: #f2d5cf;
+  --cat-flamingo: #eebebe;
+  --cat-pink: #f4b8e4;
+  --cat-mauve: #ca9ee6;
+  --cat-red: #e78284;
+  --cat-maroon: #ea999c;
+  --cat-peach: #ef9f76;
+  --cat-yellow: #e5c890;
+  --cat-green: #a6d189;
+  --cat-teal: #81c8be;
+  --cat-sky: #99d1db;
+  --cat-sapphire: #85c1dc;
+  --cat-blue: #8caaee;
+  --cat-lavender: #babbf1;
+  --cat-text: #c6d0f5;
+  --cat-subtext1: #b5bfe2;
+  --cat-subtext0: #a5adce;
+  --cat-overlay2: #949cbb;
+  --cat-overlay1: #838ba7;
+  --cat-overlay0: #737994;
+  --cat-surface2: #626880;
+  --cat-surface1: #51576d;
+  --cat-surface0: #414559;
+  --cat-base: #303446;
+  --cat-mantle: #292c3c;
+  --cat-crust: #232634;
+  --background: var(--cat-base);
+  --foreground: var(--cat-text);
+}
+
+/* Specific Theme: Macchiato (Official Dark) */
+:root[data-theme="macchiato"],
+.theme-macchiato {
+  --cat-rosewater: #f4dbd6;
+  --cat-flamingo: #f0c6c6;
+  --cat-pink: #f5bde6;
+  --cat-mauve: #c6a0f6;
+  --cat-red: #ed8796;
+  --cat-maroon: #ee99a0;
+  --cat-peach: #f5a97f;
+  --cat-yellow: #eed49f;
+  --cat-green: #a6da95;
+  --cat-teal: #8bd5ca;
+  --cat-sky: #91d7e3;
+  --cat-sapphire: #7dc4e4;
+  --cat-blue: #8aadf4;
+  --cat-lavender: #b7bdf8;
+  --cat-text: #cad3f5;
+  --cat-subtext1: #b8c0e0;
+  --cat-subtext0: #a5adcb;
+  --cat-overlay2: #939ab7;
+  --cat-overlay1: #8087a2;
+  --cat-overlay0: #6e738d;
+  --cat-surface2: #5b6078;
+  --cat-surface1: #494d64;
+  --cat-surface0: #363a4f;
+  --cat-base: #24273a;
+  --cat-mantle: #1e2030;
+  --cat-crust: #181926;
+  --background: var(--cat-base);
+  --foreground: var(--cat-text);
 }
 
 @theme inline {
+  --color-cat-rosewater: var(--cat-rosewater);
+  --color-cat-flamingo: var(--cat-flamingo);
+  --color-cat-pink: var(--cat-pink);
+  --color-cat-mauve: var(--cat-mauve);
+  --color-cat-red: var(--cat-red);
+  --color-cat-maroon: var(--cat-maroon);
+  --color-cat-peach: var(--cat-peach);
+  --color-cat-yellow: var(--cat-yellow);
+  --color-cat-green: var(--cat-green);
+  --color-cat-teal: var(--cat-teal);
+  --color-cat-sky: var(--cat-sky);
+  --color-cat-sapphire: var(--cat-sapphire);
+  --color-cat-blue: var(--cat-blue);
+  --color-cat-lavender: var(--cat-lavender);
+  --color-cat-text: var(--cat-text);
+  --color-cat-subtext1: var(--cat-subtext1);
+  --color-cat-subtext0: var(--cat-subtext0);
+  --color-cat-overlay2: var(--cat-overlay2);
+  --color-cat-overlay1: var(--cat-overlay1);
+  --color-cat-overlay0: var(--cat-overlay0);
+  --color-cat-surface2: var(--cat-surface2);
+  --color-cat-surface1: var(--cat-surface1);
+  --color-cat-surface0: var(--cat-surface0);
+  --color-cat-base: var(--cat-base);
+  --color-cat-mantle: var(--cat-mantle);
+  --color-cat-crust: var(--cat-crust);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -34,4 +314,3 @@ body {
   justify-content: center !important;
   vertical-align: middle !important;
 }
-

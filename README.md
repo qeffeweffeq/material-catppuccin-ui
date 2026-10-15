@@ -1,6 +1,10 @@
 # Material Catppuccin UI
 
-A React UI component library implementing a generic Material Framework layout paired with the beautiful [Catppuccin](https://github.com/catppuccin/catppuccin) color palette (Mocha/Latte).
+A React UI component library implementing a generic Material Framework layout paired with the beautiful [Catppuccin](https://github.com/catppuccin/catppuccin) color palette.
+
+Includes official Catppuccin themes (`mocha`, `latte`, `frappe`, `macchiato`) and custom greyish themes:
+- **`base` (Dark)**: Extracted minimal dark theme (`#000000` crust, `#0e0e0e` base, `#272727` surface1, with shared vibrant `#FF0074` pink and `#FF5500` peach accents).
+- **`esab` (Light)**: The inverted counterpart (`#ffffff` crust, `#f1f1f1` base, `#d8d8d8` surface1, with shared `#FF0074` pink and `#FF5500` peach accents).
 
 This library provides clean, raw `.tsx` exports optimized for modern Next.js environments using Tailwind CSS v4.
 
@@ -36,13 +40,16 @@ Import the global styles and instruct Tailwind to scan the package for utility c
 ```tsx
 'use client';
 import { useState } from 'react';
-import { Sidebar, ThemeToggle } from '@qfwfq/material-catppuccin-ui';
+import { Sidebar, ThemeToggle, Card, catppuccinFlavors } from '@qfwfq/material-catppuccin-ui';
 
 export default function Dashboard() {
   const [darkMode, setDarkMode] = useState(true);
 
   return (
-    <div className={`min-h-screen flex transition-colors duration-200 ${darkMode ? 'bg-[#1e1e2e] text-[#cdd6f4]' : 'bg-[#eff1f5] text-[#4c4f69]'}`}>
+    <div 
+      data-theme={darkMode ? 'base' : 'esab'}
+      className="min-h-screen flex transition-colors duration-200 bg-cat-base text-cat-text"
+    >
       <Sidebar darkMode={darkMode} title="Trendy" subtitle="Dashboard">
         {/* Sidebar Content goes here */}
         
@@ -54,10 +61,27 @@ export default function Dashboard() {
       
       <main className="flex-1 ml-80 pt-6 px-8 pb-8 min-h-screen">
         <h1 className="text-2xl font-bold">Main Content</h1>
+        <Card darkMode={darkMode} className="p-4 mt-4">
+          <p>Card styled with Catppuccin theme variables</p>
+        </Card>
       </main>
     </div>
   );
 }
+```
+
+## Palette API
+
+You can programmatically access the full color values of all themes (`latte`, `frappe`, `macchiato`, `mocha`, `base`, `esab`):
+
+```typescript
+import { catppuccinFlavors, getFlavor } from '@qfwfq/material-catppuccin-ui';
+
+// Access hex colors directly
+console.log(catppuccinFlavors.base.colors.base); // #0e0e0e
+console.log(catppuccinFlavors.base.colors.pink); // #FF0074
+console.log(catppuccinFlavors.esab.colors.base); // #f1f1f1
+console.log(catppuccinFlavors.mocha.colors.base); // #1e1e2e
 ```
 
 ## Local Development Workflow

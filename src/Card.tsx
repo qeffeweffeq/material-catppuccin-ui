@@ -13,9 +13,9 @@ export function Card({ darkMode, selected = false, onDelete, children, className
     <div 
       className={`rounded-xl border shadow-sm flex flex-col transition-all duration-200 group relative ${
         darkMode 
-          ? 'bg-[#181825] border-[#313244] hover:border-[#89b4fa]' 
-          : 'bg-white border-[#ccd0da] hover:border-[#1e66f5]'
-      } ${selected ? (darkMode ? 'ring-2 ring-[#89b4fa] border-transparent' : 'ring-2 ring-[#1e66f5] border-transparent') : ''} ${className}`}
+          ? 'bg-cat-mantle border-cat-surface0 hover:border-cat-pink' 
+          : 'bg-cat-base border-cat-surface0 hover:border-cat-pink'
+      } ${selected ? 'ring-2 ring-cat-pink border-transparent' : ''} ${className}`}
       {...props}
     >
       {onDelete && (
@@ -26,8 +26,8 @@ export function Card({ darkMode, selected = false, onDelete, children, className
           }}
           className={`absolute top-3 right-3 p-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity z-10 ${
             darkMode 
-              ? 'text-[#f38ba8] hover:bg-[#313244]' 
-              : 'text-[#d20f39] hover:bg-[#e6e9ef]'
+              ? 'text-cat-red hover:bg-cat-surface0' 
+              : 'text-cat-red hover:bg-cat-surface1'
           }`}
           title="Delete"
         >

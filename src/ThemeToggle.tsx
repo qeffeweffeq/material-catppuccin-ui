@@ -11,8 +11,8 @@ export function ThemeToggle({ darkMode, setDarkMode }: ThemeToggleProps) {
       onClick={() => setDarkMode(!darkMode)}
       className={`cursor-pointer w-10 h-10 flex items-center justify-center rounded-full border transition-colors opacity-70 hover:opacity-100 ${
         darkMode 
-          ? 'border-[#45475a] text-[#a6adc8] hover:bg-[#313244]' 
-          : 'border-[#ccd0da] text-[#6c6f85] hover:bg-[#e6e9ef]'
+          ? 'border-cat-surface1 text-cat-subtext0 hover:bg-cat-surface0' 
+          : 'border-cat-surface0 text-cat-subtext0 hover:bg-cat-surface1'
       }`}
       title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
     >

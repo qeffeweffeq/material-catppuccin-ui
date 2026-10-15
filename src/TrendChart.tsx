@@ -15,22 +15,19 @@ export function TrendChart({ darkMode, title = "Interest over time", data, lines
 
   return (
     <div className={`rounded-xl border shadow-sm flex flex-col transition-all duration-200 w-full ${
-      darkMode ? 'bg-[#181825] border-[#313244]' : 'bg-white border-[#ccd0da]'
+      darkMode ? 'bg-cat-mantle border-cat-surface0' : 'bg-cat-base border-cat-surface0'
     }`}>
       <div 
-        className={`flex items-center justify-between p-4 cursor-pointer select-none transition-colors ${isOpen ? 'border-b' : ''} ${
-          darkMode ? 'border-[#313244] hover:bg-[#313244]/30' : 'border-[#ccd0da] hover:bg-gray-50'
-        }`}
+        className={`flex items-center justify-between p-4 cursor-pointer select-none transition-colors ${isOpen ? 'border-b border-cat-surface0' : ''} hover:bg-cat-surface0/30`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex items-center gap-2">
-          {isOpen ? <ChevronUp className={`w-4 h-4 ${darkMode ? 'text-[#a6adc8]' : 'text-[#5F6368]'}`} /> : <ChevronDown className={`w-4 h-4 ${darkMode ? 'text-[#a6adc8]' : 'text-[#5F6368]'}`} />}
-          <h3 className={`text-base font-semibold ${darkMode ? 'text-[#cdd6f4]' : 'text-[#202124]'}`}>{title}</h3>
+          {isOpen ? <ChevronUp className="w-4 h-4 text-cat-subtext0" /> : <ChevronDown className="w-4 h-4 text-cat-subtext0" />}
+          <h3 className="text-base font-semibold text-cat-text">{title}</h3>
         </div>
-        <div className={`flex items-center gap-4 ${darkMode ? 'text-[#a6adc8]' : 'text-[#5F6368]'}`}>
+        <div className="flex items-center gap-4 text-cat-subtext0">
           <Download 
             className="w-4 h-4 cursor-pointer hover:opacity-70" 
-             
             onClick={(e) => {
               e.stopPropagation();
               if (onDownload) onDownload();
@@ -44,12 +41,12 @@ export function TrendChart({ darkMode, title = "Interest over time", data, lines
           {data && data.length > 0 ? (
             <ResponsiveContainer width="99%" height="100%">
               <LineChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid vertical={false} stroke={darkMode ? '#313244' : '#E8EAED'} />
+                <CartesianGrid vertical={false} stroke="var(--cat-surface0)" />
                 <XAxis 
                   dataKey="time" 
                   axisLine={false} 
                   tickLine={false} 
-                  tick={{ fill: darkMode ? '#a6adc8' : '#70757A', fontSize: 9 }} 
+                  tick={{ fill: 'var(--cat-subtext0)', fontSize: 9 }} 
                   dy={10}
                   dx={-10}
                   angle={-45}
@@ -59,15 +56,15 @@ export function TrendChart({ darkMode, title = "Interest over time", data, lines
                 <YAxis 
                   axisLine={false} 
                   tickLine={false} 
-                  tick={{ fill: darkMode ? '#a6adc8' : '#70757A', fontSize: 12 }} 
+                  tick={{ fill: 'var(--cat-subtext0)', fontSize: 12 }} 
                   ticks={[0, 25, 50, 75, 100]}
                 />
                 <Tooltip 
                   contentStyle={{ 
                     borderRadius: '8px', 
-                    border: `1px solid ${darkMode ? '#313244' : '#ccd0da'}`, 
-                    backgroundColor: darkMode ? '#181825' : '#ffffff',
-                    color: darkMode ? '#cdd6f4' : '#202124',
+                    border: '1px solid var(--cat-surface0)', 
+                    backgroundColor: 'var(--cat-mantle)',
+                    color: 'var(--cat-text)',
                     boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' 
                   }}
                 />
@@ -85,7 +82,7 @@ export function TrendChart({ darkMode, title = "Interest over time", data, lines
               </LineChart>
             </ResponsiveContainer>
           ) : (
-            <div className={`h-full flex items-center justify-center ${darkMode ? 'text-[#a6adc8]' : 'text-gray-500'}`}>
+            <div className="h-full flex items-center justify-center text-cat-subtext0">
               No data available for the selected parameters.
             </div>
           )}

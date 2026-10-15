@@ -16,19 +16,19 @@ export function ListedTerms({ darkMode, terms, colors, onChange, onAdd, onRemove
     <div className="flex flex-col gap-2">
       {terms.map((term, idx) => (
         <div key={idx} className={`flex items-center rounded border transition-colors ${
-          darkMode ? 'border-[#313244] bg-[#1e1e2e]' : 'border-[#ccd0da] bg-white'
+          darkMode ? 'border-cat-surface0 bg-cat-base' : 'border-cat-surface0 bg-cat-base'
         }`}>
           <div className={`w-3 h-3 shrink-0 rounded-full ml-3 ${darkMode ? 'opacity-80' : ''}`} style={{ backgroundColor: colors[idx % colors.length] }}></div>
           <input 
             type="text" 
             value={term} 
             onChange={(e) => onChange(idx, e.target.value)}
-            className={`w-full p-2 pl-4 text-sm focus:outline-none bg-transparent ${darkMode ? 'text-[#cdd6f4]' : 'text-[#4c4f69]'}`}
+            className="w-full p-2 pl-4 text-sm focus:outline-none bg-transparent text-cat-text"
           />
           {terms.length > 1 && (
             <button 
               onClick={() => onRemove(idx)}
-              className={`p-2 hover:bg-opacity-20 transition-colors ${darkMode ? 'hover:bg-white text-[#a6adc8]' : 'hover:bg-black text-[#6c6f85]'}`}
+              className="p-2 transition-colors text-cat-subtext0 hover:bg-cat-surface1"
             >
               <X className="w-3.5 h-3.5" />
             </button>
@@ -40,7 +40,9 @@ export function ListedTerms({ darkMode, terms, colors, onChange, onAdd, onRemove
         <button 
           onClick={onAdd}
           className={`flex items-center justify-center rounded border p-2 mt-1 border-dashed transition-colors ${
-            darkMode ? 'border-[#45475a] text-[#a6adc8] hover:bg-[#313244] hover:text-[#cdd6f4]' : 'border-[#ccd0da] text-[#6c6f85] hover:bg-[#e6e9ef] hover:text-[#4c4f69]'
+            darkMode 
+              ? 'border-cat-surface1 text-cat-subtext0 hover:bg-cat-surface0 hover:text-cat-text' 
+              : 'border-cat-surface0 text-cat-subtext0 hover:bg-cat-surface1 hover:text-cat-text'
           }`}
         >
           <Plus className="w-4 h-4 mr-1.5" />

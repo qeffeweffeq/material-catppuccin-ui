@@ -9,11 +9,11 @@ export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElemen
 export function Select({ darkMode, label, options, className = '', ...props }: SelectProps) {
   const inputClass = `w-full p-2 text-sm rounded border focus:outline-none focus:ring-2 transition-colors ${
     darkMode 
-      ? 'bg-[#181825] border-[#313244] text-[#cdd6f4] focus:ring-[#89b4fa] focus:border-transparent' 
-      : 'bg-white border-[#ccd0da] text-[#4c4f69] focus:ring-[#1e66f5] focus:border-transparent'
+      ? 'bg-cat-mantle border-cat-surface0 text-cat-text focus:ring-cat-pink focus:border-transparent' 
+      : 'bg-cat-base border-cat-surface0 text-cat-text focus:ring-cat-pink focus:border-transparent'
   }`;
   
-  const labelClass = `block text-[10px] font-semibold uppercase tracking-wider mb-1 ${darkMode ? 'text-[#a6adc8]' : 'text-[#6c6f85]'}`;
+  const labelClass = 'block text-[10px] font-semibold uppercase tracking-wider mb-1 text-cat-subtext0';
 
   return (
     <div className={className}>
