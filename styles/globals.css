@@ -1,6 +1,3 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
-
 /* Default Theme: Esab (Light) */
 :root {
   --cat-rosewater: #FF338F;
@@ -29,6 +26,9 @@
   --cat-base: #f1f1f1;
   --cat-mantle: #f8f8f8;
   --cat-crust: #ffffff;
+  --cat-accent: var(--cat-pink);
+  --cat-accent-hover: var(--cat-rosewater);
+  --cat-on-accent: #ffffff;
   --background: var(--cat-base);
   --foreground: var(--cat-text);
 }
@@ -62,6 +62,9 @@
     --cat-base: #0e0e0e;
     --cat-mantle: #070707;
     --cat-crust: #000000;
+    --cat-accent: var(--cat-pink);
+    --cat-accent-hover: var(--cat-rosewater);
+    --cat-on-accent: #ffffff;
     --background: var(--cat-base);
     --foreground: var(--cat-text);
   }
@@ -69,6 +72,7 @@
 
 /* Specific Theme: Base (Dark) */
 :root[data-theme="base"],
+[data-theme="base"],
 .dark,
 .theme-base {
   --cat-rosewater: #FF338F;
@@ -97,12 +101,16 @@
   --cat-base: #0e0e0e;
   --cat-mantle: #070707;
   --cat-crust: #000000;
+  --cat-accent: var(--cat-pink);
+  --cat-accent-hover: var(--cat-rosewater);
+  --cat-on-accent: #ffffff;
   --background: var(--cat-base);
   --foreground: var(--cat-text);
 }
 
 /* Specific Theme: Esab (Light) */
 :root[data-theme="esab"],
+[data-theme="esab"],
 .light,
 .theme-esab {
   --cat-rosewater: #FF338F;
@@ -131,12 +139,16 @@
   --cat-base: #f1f1f1;
   --cat-mantle: #f8f8f8;
   --cat-crust: #ffffff;
+  --cat-accent: var(--cat-pink);
+  --cat-accent-hover: var(--cat-rosewater);
+  --cat-on-accent: #ffffff;
   --background: var(--cat-base);
   --foreground: var(--cat-text);
 }
 
 /* Specific Theme: Mocha (Official Dark) */
 :root[data-theme="mocha"],
+[data-theme="mocha"],
 .theme-mocha {
   --cat-rosewater: #f5e0dc;
   --cat-flamingo: #f2cdcd;
@@ -164,12 +176,16 @@
   --cat-base: #1e1e2e;
   --cat-mantle: #181825;
   --cat-crust: #11111b;
+  --cat-accent: var(--cat-blue);
+  --cat-accent-hover: var(--cat-lavender);
+  --cat-on-accent: var(--cat-crust);
   --background: var(--cat-base);
   --foreground: var(--cat-text);
 }
 
 /* Specific Theme: Latte (Official Light) */
 :root[data-theme="latte"],
+[data-theme="latte"],
 .theme-latte {
   --cat-rosewater: #dc8a78;
   --cat-flamingo: #dd7878;
@@ -197,12 +213,16 @@
   --cat-base: #eff1f5;
   --cat-mantle: #e6e9ef;
   --cat-crust: #dce0e8;
+  --cat-accent: var(--cat-blue);
+  --cat-accent-hover: var(--cat-lavender);
+  --cat-on-accent: #ffffff;
   --background: var(--cat-base);
   --foreground: var(--cat-text);
 }
 
 /* Specific Theme: Frappé (Official Dark) */
 :root[data-theme="frappe"],
+[data-theme="frappe"],
 .theme-frappe {
   --cat-rosewater: #f2d5cf;
   --cat-flamingo: #eebebe;
@@ -230,12 +250,16 @@
   --cat-base: #303446;
   --cat-mantle: #292c3c;
   --cat-crust: #232634;
+  --cat-accent: var(--cat-blue);
+  --cat-accent-hover: var(--cat-lavender);
+  --cat-on-accent: var(--cat-crust);
   --background: var(--cat-base);
   --foreground: var(--cat-text);
 }
 
 /* Specific Theme: Macchiato (Official Dark) */
 :root[data-theme="macchiato"],
+[data-theme="macchiato"],
 .theme-macchiato {
   --cat-rosewater: #f4dbd6;
   --cat-flamingo: #f0c6c6;
@@ -263,6 +287,9 @@
   --cat-base: #24273a;
   --cat-mantle: #1e2030;
   --cat-crust: #181926;
+  --cat-accent: var(--cat-blue);
+  --cat-accent-hover: var(--cat-lavender);
+  --cat-on-accent: var(--cat-crust);
   --background: var(--cat-base);
   --foreground: var(--cat-text);
 }
@@ -294,6 +321,9 @@
   --color-cat-base: var(--cat-base);
   --color-cat-mantle: var(--cat-mantle);
   --color-cat-crust: var(--cat-crust);
+  --color-cat-accent: var(--cat-accent);
+  --color-cat-accent-hover: var(--cat-accent-hover);
+  --color-cat-on-accent: var(--cat-on-accent);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -313,4 +343,49 @@ body {
   align-items: center !important;
   justify-content: center !important;
   vertical-align: middle !important;
+}
+
+
+/* Color scheme hints for browser UI controls */
+:root.dark,
+:root[data-theme="base"],
+:root[data-theme="mocha"],
+:root[data-theme="macchiato"],
+:root[data-theme="frappe"] {
+  color-scheme: dark;
+}
+
+:root.light,
+:root[data-theme="esab"],
+:root[data-theme="latte"] {
+  color-scheme: light;
+}
+
+/* Custom Minimal Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cat-surface2) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--cat-surface2);
+  border-radius: 9999px;
+  transition: background-color 0.15s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--cat-overlay0);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

@@ -13,9 +13,9 @@ export function Card({ darkMode, selected = false, onDelete, children, className
     <div 
       className={`rounded-xl border shadow-sm flex flex-col transition-all duration-200 group relative ${
         darkMode 
-          ? 'bg-cat-mantle border-cat-surface0 hover:border-cat-pink' 
-          : 'bg-cat-base border-cat-surface0 hover:border-cat-pink'
-      } ${selected ? 'ring-2 ring-cat-pink border-transparent' : ''} ${className}`}
+          ? 'bg-cat-mantle border-cat-surface0 hover:border-cat-accent' 
+          : 'bg-cat-base border-cat-surface0 hover:border-cat-accent'
+      } ${selected ? 'ring-2 ring-cat-accent border-transparent' : ''} ${className}`}
       {...props}
     >
       {onDelete && (
